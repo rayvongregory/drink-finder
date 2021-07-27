@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Drink Finder</title>
+  </head>
+  <body>
+    <section id="banner" class="banner">
+      <img
+        src="images/summer-cocktails.jpg"
+        alt=""
+        class="banner___background"
+      />
+      <div class="banner___content">
+        <h1>Let's get you a drink</h1>
+        <div class="banner___search">
+          <input
+            type="text"
+            class="banner___search-input"
+            placeholder="Enter a cocktail name"
+            id="banner___search-input"
+          />
+          <!-- <button type="submit" class="banner___filter-btn btn" id="banner___filter-btn"> 
+                    <i class="fa fa-filter"></i>
+                </button> -->
+          <button
+            type="submit"
+            class="banner___search-btn btn"
+            id="banner___search-btn"
+          >
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <!-- Add a surprise me button, randomly displays full ingredient list and recipe -->
+      </div>
+    </section>
+    <div class="results___text">
+      <h2 id="results___text-h2">Your results will appear here.</h2>
+      <p id="results___text-p"></p>
+    </div>
+    <section class="recipes" id="recipes"></section>
+    <section class="footer"></section>
+  </body>
+  <script src="drink-finder.js"></script>
+</html>

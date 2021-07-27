@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+:root {
+  --orange: #fe9e02;
+  --blue: #0095db;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--blue);
+  max-height: 65vh;
+  overflow: hidden;
+  color: white;
+  font-family: "Cormorant Garamond", "Times New Roman", Times, serif;
+  font-weight: 100;
+}
+
+.banner h1 {
+  font-size: clamp(1.75em, 8vw, 7em);
+  margin-bottom: 0.1em;
+}
+
+.banner___background {
+  opacity: 0.5;
+  width: 100%;
+}
+
+.banner___content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.banner___search {
+  display: flex;
+  min-width: 200px;
+  width: 50%;
+}
+
+.banner___search-input {
+  font-size: clamp(0.75em, 2vw, 1.25em);
+  border-bottom-left-radius: 2em;
+  border-top-left-radius: 2em;
+  text-decoration: none;
+  border: none;
+  height: 2em;
+  padding-left: 1em;
+  width: 100%;
+  margin: auto;
+  color: var(--orange);
+}
+
+::placeholder {
+  color: var(--orange);
+  opacity: 0.75;
+}
+
+.banner___search-input:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: var(--orange);
+  border: none;
+  padding: 0 1em;
+  font-size: clamp(0.75em, 2vw, 1.25em);
+  color: white;
+}
+
+.banner___filter-btn {
+  border-right: solid 3px white;
+}
+
+.banner___search-btn {
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+}
+
+i {
+  pointer-events: none;
+}
+
+.results___text {
+  position: relative;
+  text-align: center;
+  line-height: 2.5em;
+}
+
+#results___text-h2 {
+  margin: 1em auto 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1em, 5vw, 2.5em);
+  line-height: 1em;
+}
+
+#results___text-p {
+  color: var(--orange);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(0.75em, 4vw, 2em);
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(10em, 1fr));
+  width: 90%;
+  margin: auto auto 5em auto;
+  gap: 2em;
+}
+
+.recipe___card-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+}
+
+.recipe___card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.rotateY {
+  transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+}
+
+.removeRotateY {
+  transform: translateY(180deg);
+}
+
+/* Position the front and back side */
+.recipe___card-front,
+.recipe___card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  box-shadow: 0 4px 0.5em rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+.recipe___card-front {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe___card-front img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.recipe___card-back {
+  position: relative;
+  background-color: var(--blue);
+  color: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.recipe___card-back::-webkit-scrollbar {
+  width: 10px;
+}
+
+.recipe___card-back::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+}
+
+.recipe___card-name {
+  display: flex;
+  height: 25%;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe___card-name h2 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1em, 2vw, 1.25em);
+  padding: 0.5em 0.5em;
+  place-self: center;
+}
+
+.recipe___card-back h2 {
+  margin: 12.5% 2% 0.5em;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.25em;
+  text-align: center;
+}
+
+.recipe___exit {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 2px;
+  right: 2px;
+  width: clamp(1em, 2vw, 2em);
+  height: clamp(1em, 2vw, 2em);
+  border-radius: 0.5em;
+  border: none;
+  font-weight: 900;
+  font-size: clamp(0.75em, 1vw, 1em);
+  padding: 10px;
+  background-color: white;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.recipe___card-back p {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-size: 1em;
+  margin: 0 2%;
+  line-height: 1.5em;
+}
+
+.recipe___card-back ul {
+  margin-left: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.paddingBottom {
+  padding-bottom: 1.5em;
+}
+.recipe___button {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30%;
+}
+
+.recipe___button button {
+  color: white;
+  background-color: var(--orange);
+  border: none;
+  padding: 0.5em 1em;
+  font-size: clamp(1em, 1.25vw, 1.25em);
+  border-radius: 2em;
+  opacity: 1;
+  transition: opacity 0.25s ease-in;
+}
+
+.recipe___card:hover .recipe___button button {
+  opacity: 1;
+}
+
+.recipe___card button:hover,
+.btn:hover,
+.recipe___card button:focus,
+.btn:focus {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .recipe___button button {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 551px) {
+  .recipes {
+    grid-template-rows: repeat(auto-fill, 15em);
+  }
+
+  .recipe___card-container {
+    height: 15em;
+    transition: transform 0.5s;
+  }
+
+  .recipe___card-container:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media only screen and (min-width: 1030px) {
+  .recipes {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, 20em);
+  }
+
+  .recipe___card-container {
+    height: 20em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe___card {
+    transition: transform 0s;
+  }
+
+  .recipe___button button {
+    opacity: 1;
+    transition: opacity 0s;
+  }
+
+  .recipe___card-container:hover {
+    transform: scale(1);
+  }
+}
