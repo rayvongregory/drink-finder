@@ -5,8 +5,11 @@ const resultsH2 = document.getElementById("results___text-h2");
 const resultsP = document.getElementById("results___text-p");
 
 const getRecipe = (e) => {
-  if (e.target === searchBtn && searchInput.value) {
-    let val = searchInput.value.trim();
+   if (e.key !== "Enter" && e.key) {
+    return
+  }
+  let val = searchInput.value.trim()
+  if (val) {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${val}`)
       .then((response) => response.json())
       .then((data) => {
@@ -67,21 +70,6 @@ const getRecipe = (e) => {
           });
         }
       });
-
-    // fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${val}`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data.drinks);
-    //     data.drinks.forEach((drink) => {
-    //       fetch(
-    //         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`
-    //       )
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //           console.log(data);
-    //         });
-    //     });
-    //   });
   }
 };
 
