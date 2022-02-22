@@ -20,38 +20,19 @@
   </head>
   <body>
     <section id="banner" class="banner">
-      <img
-        src="images/summer-cocktails.jpg"
-        alt=""
-        class="banner___background"
-      />
-      <div class="banner___content">
-        <h1>Let's get you a drink</h1>
-        <div class="banner___search">
-          <input
-            type="text"
-            class="banner___search-input"
-            placeholder="Enter a cocktail name"
-            id="banner___search-input"
-          />
-          <!-- <button type="submit" class="banner___filter-btn btn" id="banner___filter-btn"> 
-                    <i class="fa fa-filter"></i>
-                </button> -->
-          <button
-            type="submit"
-            class="banner___search-btn btn"
-            id="banner___search-btn"
-          >
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-        <!-- Add a surprise me button, randomly displays full ingredient list and recipe -->
-      </div>
+      <h1>Cocktail Finder</h1>
     </section>
-    <div class="results___text">
-      <h2 id="results___text-h2">Your results will appear here.</h2>
-      <p id="results___text-p"></p>
+    <div class="search">
+      <input
+        type="text"
+        placeholder="Enter a cocktail name"
+        id="search-input"
+      />
+      <button type="submit" id="search-btn">
+        <i class="fa fa-search"></i>
+      </button>
     </div>
+    <p id="results___text">Your results will appear here.</p>
     <section class="recipes" id="recipes"></section>
     <section class="footer"></section>
   </body>
